@@ -40,11 +40,10 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  rules:
+  rules: 172.18.0.2,172.18.0.3
   - http:
       paths:
       - path: /
         backend:
           serviceName: springapp-svc
           servicePort: 8080
-          
