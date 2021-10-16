@@ -47,3 +47,4 @@ spec:
         backend:
           serviceName: springapp-svc
           servicePort: 8080
+          
