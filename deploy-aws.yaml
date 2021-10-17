@@ -29,22 +29,6 @@ spec:
     app: springbootapp
   ports:
     - protocol: TCP
-      port: 80
+      port: 443
       targetPort: 8080
   type: LoadBalancer
-# service networking k3s
----
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  name: appingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  rules: 172.18.0.2,172.18.0.3
-  - http:
-      paths:
-      - path: /
-        backend:
-          serviceName: springapp-svc
-          servicePort: 8080
