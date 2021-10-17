@@ -13,22 +13,19 @@ spec:
         app: springbootapp
     spec:
       containers:
-      - name: mi-springbootapp
+      - name: springbootapp
         image: dariotroilo/personalpay:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-# service type loadbalancer
-#---
-#apiVersion: v1
-#kind: Service
-#metadata:
-#  name: springapp-svc
-#spec:
-#  selector:
-#    app: springbootapp
-#  ports:
-#    - protocol: TCP
-#      port: 443
-#      targetPort: 8080
-#  type: LoadBalancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: springbootapp
+spec:
+  selector:
+    app: springbootapp
+  ports:
+    - protocol: TCP
+      port: 443
+      targetPort: 8080
