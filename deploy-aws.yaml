@@ -13,7 +13,7 @@ spec:
         app: springbootapp
     spec:
       containers:
-      - name: springbootapp
+      - name: my-springbootapp
         image: dariotroilo/personalpay:latest
         imagePullPolicy: Always
         ports:
